@@ -1,0 +1,18 @@
+{
+  "name": "bug-webpack-minifier",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "test-min": "yarn build && grep -q 'null.includes(' 'dist/bundle.js' && echo 'invalid output: contains `null.includes(`' || echo 'OK'"
+  },
+  "dependencies": {
+    "@mux/upchunk": "^3.2.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}
